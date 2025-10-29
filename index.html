@@ -3,80 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agencia de Viajes - TravelNow</title>
+    <title>Good Life Travel ✈</title>
     <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
-    <!-- Encabezado -->
+    <!-- Header -->
     <header>
-        <div class="logo">🌍 TravelNow</div>
+        <div class="logo">🌎 Good Life Travel</div>
         <nav>
             <ul>
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#destinos">Destinos</a></li>
-                <li><a href="#promociones">Promociones</a></li>
+                <li><a href="#servicios">Servicios</a></li>
                 <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#login">Iniciar Sesión</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Sección Inicio -->
-    <section id="inicio" class="seccion">
-        <h1>Descubre el mundo con <span>TravelNow</span></h1>
-        <p>Vive experiencias inolvidables, viaja, explora y sueña en grande.</p>
-        <button id="verDestinos">Ver Destinos</button>
+    <!-- Hero -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Viaja, vive y descubre el mundo con nosotros 🌴</h1>
+            <p>Los mejores destinos, experiencias únicas y ofertas exclusivas para ti.</p>
+            <button onclick="scrollToSection('destinos')">Explorar destinos</button>
+        </div>
     </section>
 
-    <!-- Sección Destinos -->
-    <section id="destinos" class="seccion">
+    <!-- Destinos -->
+    <section id="destinos" class="destinos">
         <h2>Destinos Populares</h2>
-        <div class="cards">
+        <div class="destinos-grid">
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Playa">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Playa Caribeña">
                 <h3>Caribe</h3>
-                <p>Aguas cristalinas, arena blanca y sol todo el año.</p>
-                <button class="reservar">Reservar</button>
+                <p>Disfruta del sol, mar y arena en los mejores paraísos tropicales.</p>
             </div>
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad" alt="Montaña">
+                <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad" alt="Montañas Suizas">
                 <h3>Suiza</h3>
-                <p>Montañas nevadas, paisajes increíbles y aventura sin fin.</p>
-                <button class="reservar">Reservar</button>
+                <p>Explora montañas y lagos con paisajes impresionantes.</p>
             </div>
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba" alt="Ciudad">
+                <img src="https://content-viajes.nationalgeographic.com.es/medio/2021/01/26/templo-de-asakusa_ec512f37_1249x840.jpg" alt="Ciudad nocturna Tokio">
                 <h3>Tokio</h3>
-                <p>Una mezcla perfecta entre tradición y tecnología.</p>
-                <button class="reservar">Reservar</button>
+                <p>Vive la tecnología y la cultura japonesa como nunca antes.</p>
             </div>
         </div>
     </section>
 
-    <!-- Sección Promociones -->
-    <section id="promociones" class="seccion">
-        <h2>Ofertas Especiales</h2>
-        <div class="promo">
-            <p>🌴 ¡Viaja a Cancún con 30% de descuento este verano!</p>
-            <button id="verMas">Ver más</button>
+    <!-- Servicios -->
+    <section id="servicios" class="servicios">
+        <h2>¿Por qué elegirnos?</h2>
+        <div class="servicios-container">
+            <div class="servicio">
+                <h3>🌍 Viajes Personalizados</h3>
+                <p>Arma tu propio itinerario con la ayuda de nuestros asesores expertos.</p>
+            </div>
+            <div class="servicio">
+                <h3>💸 Precios Competitivos</h3>
+                <p>Ofrecemos los mejores precios del mercado, sin sacrificar calidad.</p>
+            </div>
+            <div class="servicio">
+                <h3>🤝 Atención 24/7</h3>
+                <p>Soporte continuo antes, durante y después de tu viaje.</p>
+            </div>
         </div>
     </section>
 
-    <!-- Sección Contacto -->
-    <section id="contacto" class="seccion">
+    <!-- Contacto -->
+    <section id="contacto" class="contacto">
         <h2>Contáctanos</h2>
-        <form id="contactForm">
-            <input type="text" placeholder="Nombre completo" required>
-            <input type="email" placeholder="Correo electrónico" required>
-            <textarea placeholder="Mensaje" required></textarea>
-            <button type="submit">Enviar</button>
+        <form onsubmit="return enviarMensaje(event)">
+            <input type="text" id="nombre" placeholder="Tu nombre completo">
+            <input type="email" id="correo" placeholder="Tu correo electrónico">
+            <textarea id="mensaje" rows="4" placeholder="Escribe tu mensaje aquí..."></textarea>
+            <button type="submit">Enviar Mensaje</button>
         </form>
     </section>
 
-    <!-- Pie de página -->
-    <footer>
-        <p>© 2025 TravelNow | Desarrollado por Jacobo Velasco</p>
-    </footer>
+    <!-- Login -->
+    <section id="login" class="login">
+        <h2>Iniciar Sesión</h2>
+        <form onsubmit="return iniciarSesion(event)">
+            <label for="usuario">Usuario o correo:</label>
+            <input type="text" id="usuario" placeholder="Ingresa tu usuario o correo">
 
-    <script src="script.js"></script>
+            <label for="clave">Contraseña:</label>
+            <input type="password" id="clave" placeholder="Ingresa tu contraseña">
+
+            <button type="submit">Ingresar</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Good Life Travel - Diseñado por Jacobo Velasco 🌐</p>
+    </footer>
 </body>
 </html>

@@ -1,205 +1,248 @@
-/* Estilos Generales */
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
 }
 
+/* Colores base */
+:root {
+    --azul: #00bcd4;
+    --verde: #00cc99;
+    --turquesa: #0099cc;
+    --gris-claro: #f7fafc;
+}
+
+/* Body */
 body {
-    background-color: #f0f8f5;
-    color: #222;
-    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--gris-claro);
+    color: #333;
 }
 
-/* Encabezado */
+/* Header */
 header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: linear-gradient(90deg, #00b894, #0984e3);
+    background: linear-gradient(90deg, var(--turquesa), var(--verde));
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 50px;
-    z-index: 10;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.logo {
-    font-size: 1.5em;
+header .logo {
+    font-size: 1.4em;
     font-weight: bold;
 }
 
 nav ul {
-    display: flex;
     list-style: none;
-}
-
-nav li {
-    margin: 0 15px;
+    display: flex;
+    gap: 25px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: bold;
     transition: 0.3s;
 }
 
 nav a:hover {
-    color: #dff9fb;
+    color: #e0f7fa;
 }
 
-/* Secciones */
-.seccion {
-    padding: 100px 50px;
-    text-align: center;
-}
-
-#inicio {
-    background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1350&q=80') center/cover;
-    color: white;
-    height: 100vh;
+/* Hero */
+.hero {
+    background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
 }
 
-#inicio h1 span {
-    color: #00ffcc;
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0,0,0,0.5);
 }
 
-#inicio button {
-    background: #0984e3;
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    animation: fadeIn 2s ease;
+}
+
+.hero button {
+    background-color: var(--verde);
     color: white;
     border: none;
     padding: 12px 25px;
-    margin-top: 20px;
-    font-size: 1em;
+    border-radius: 8px;
     cursor: pointer;
-    border-radius: 25px;
-    transition: 0.3s;
+    font-weight: bold;
+    margin-top: 15px;
 }
 
-#inicio button:hover {
-    background: #00b894;
-    transform: scale(1.1);
+.hero button:hover {
+    background-color: var(--azul);
 }
 
-/* Cards de destinos */
-.cards {
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Destinos */
+.destinos {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.destinos-grid {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 25px;
     margin-top: 30px;
 }
 
 .card {
     background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     width: 300px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    overflow: hidden;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card img {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    border-radius: 12px 12px 0 0;
 }
 
-.card h3 {
-    color: #0984e3;
-    margin: 15px 0 5px;
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.2);
 }
 
-.card p {
-    padding: 0 15px;
-    color: #555;
+/* Servicios */
+.servicios {
+    background-color: #e0f7fa;
+    padding: 60px 20px;
+    text-align: center;
 }
 
-.reservar {
-    background: #00b894;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    margin: 15px 0 20px;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: 0.3s;
+.servicios-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
-.reservar:hover {
-    background: #0984e3;
-}
-
-/* Promociones */
-.promo {
-    background: #dff9fb;
-    border: 2px solid #00b894;
+.servicio {
+    background: white;
+    border-radius: 12px;
     padding: 25px;
-    border-radius: 10px;
-    display: inline-block;
-}
-
-#verMas {
-    background: #0984e3;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin-top: 15px;
-    border-radius: 20px;
-    cursor: pointer;
+    width: 280px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     transition: 0.3s;
 }
 
-#verMas:hover {
-    background: #00b894;
+.servicio:hover {
+    background-color: var(--verde);
+    color: white;
 }
 
-/* Formulario de contacto */
-form {
+/* Contacto */
+.contacto {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.contacto form {
+    max-width: 400px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    max-width: 400px;
-    margin: auto;
     gap: 15px;
 }
 
-input, textarea {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+.contacto input, .contacto textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--azul);
 }
 
-button[type="submit"] {
-    background: #0984e3;
+.contacto button {
+    background-color: var(--turquesa);
     color: white;
     border: none;
-    padding: 12px;
-    border-radius: 25px;
+    border-radius: 8px;
+    padding: 10px;
     cursor: pointer;
-    transition: 0.3s;
+    font-weight: bold;
 }
 
-button[type="submit"]:hover {
-    background: #00b894;
+.contacto button:hover {
+    background-color: var(--verde);
+}
+
+/* Login */
+.login {
+    background-color: #f0faff;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.login form {
+    max-width: 350px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    padding: 25px;
+}
+
+.login input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    border: 1px solid var(--azul);
+    border-radius: 8px;
+}
+
+.login button {
+    background-color: var(--verde);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 15px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.login button:hover {
+    background-color: var(--turquesa);
 }
 
 /* Footer */
 footer {
-    background: #0984e3;
+    background-color: var(--turquesa);
     color: white;
     text-align: center;
-    padding: 15px;
-    margin-top: 40px;
+    padding: 20px;
+    font-size: 14px;
 }
