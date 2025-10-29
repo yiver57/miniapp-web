@@ -1,0 +1,248 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Colores base */
+:root {
+    --azul: #00bcd4;
+    --verde: #00cc99;
+    --turquesa: #0099cc;
+    --gris-claro: #f7fafc;
+}
+
+/* Body */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--gris-claro);
+    color: #333;
+}
+
+/* Header */
+header {
+    background: linear-gradient(90deg, var(--turquesa), var(--verde));
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .logo {
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #e0f7fa;
+}
+
+/* Hero */
+.hero {
+    background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    animation: fadeIn 2s ease;
+}
+
+.hero button {
+    background-color: var(--verde);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.hero button:hover {
+    background-color: var(--azul);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Destinos */
+.destinos {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.destinos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+}
+
+/* Servicios */
+.servicios {
+    background-color: #e0f7fa;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.servicios-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.servicio {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    width: 280px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.servicio:hover {
+    background-color: var(--verde);
+    color: white;
+}
+
+/* Contacto */
+.contacto {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.contacto form {
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contacto input, .contacto textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--azul);
+}
+
+.contacto button {
+    background-color: var(--turquesa);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.contacto button:hover {
+    background-color: var(--verde);
+}
+
+/* Login */
+.login {
+    background-color: #f0faff;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.login form {
+    max-width: 350px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    padding: 25px;
+}
+
+.login input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    border: 1px solid var(--azul);
+    border-radius: 8px;
+}
+
+.login button {
+    background-color: var(--verde);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 15px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.login button:hover {
+    background-color: var(--turquesa);
+}
+
+/* Footer */
+footer {
+    background-color: var(--turquesa);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+}
