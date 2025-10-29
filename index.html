@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agencia de Viajes - TravelNow</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <div class="logo">🌍 TravelNow</div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#destinos">Destinos</a></li>
+                <li><a href="#promociones">Promociones</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección Inicio -->
+    <section id="inicio" class="seccion">
+        <h1>Descubre el mundo con <span>TravelNow</span></h1>
+        <p>Vive experiencias inolvidables, viaja, explora y sueña en grande.</p>
+        <button id="verDestinos">Ver Destinos</button>
+    </section>
+
+    <!-- Sección Destinos -->
+    <section id="destinos" class="seccion">
+        <h2>Destinos Populares</h2>
+        <div class="cards">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Playa">
+                <h3>Caribe</h3>
+                <p>Aguas cristalinas, arena blanca y sol todo el año.</p>
+                <button class="reservar">Reservar</button>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad" alt="Montaña">
+                <h3>Suiza</h3>
+                <p>Montañas nevadas, paisajes increíbles y aventura sin fin.</p>
+                <button class="reservar">Reservar</button>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba" alt="Ciudad">
+                <h3>Tokio</h3>
+                <p>Una mezcla perfecta entre tradición y tecnología.</p>
+                <button class="reservar">Reservar</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Promociones -->
+    <section id="promociones" class="seccion">
+        <h2>Ofertas Especiales</h2>
+        <div class="promo">
+            <p>🌴 ¡Viaja a Cancún con 30% de descuento este verano!</p>
+            <button id="verMas">Ver más</button>
+        </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section id="contacto" class="seccion">
+        <h2>Contáctanos</h2>
+        <form id="contactForm">
+            <input type="text" placeholder="Nombre completo" required>
+            <input type="email" placeholder="Correo electrónico" required>
+            <textarea placeholder="Mensaje" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>© 2025 TravelNow | Desarrollado por Jacobo Velasco</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
